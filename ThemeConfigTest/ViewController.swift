@@ -23,7 +23,9 @@ class ViewController: UIViewController {
   @IBAction func btnAction(_ sender: Any) {
     for view in self.view.subviews {
       if view.theme != nil {
-        view.theme?.config?(view)
+        UIView.animate(withDuration: 10, animations: {
+          view.theme?.config?(view)
+        })
       }
     }
   }
